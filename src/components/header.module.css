@@ -1,0 +1,184 @@
+.atas {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: var(--colormain);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--colorsekunder);
+    letter-spacing: 1.2px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.container {
+    width: var(--max-width);
+    display: grid;
+    grid-template-columns: 200px 0.5fr 0.5fr 0.5fr 1fr;
+    align-items: center;
+    justify-content: center;
+    background: var(--colormain);
+}
+
+.gambar {
+    grid-area: 1/1/1/1;
+    width: 200px;
+    height: 80px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.gambar img {
+    width: 100%;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.text1 {
+    grid-area: 1/2/2/3;
+    padding: 0 10px;
+    height: 80px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--hovercolormain);
+    border-left: 1px solid var(--hovercolormain)
+}
+
+.text2 {
+    grid-area: 1/3/2/4;
+    padding: 0 10px;
+    height: 80px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text3 {
+    grid-area: 1/4/2/5;
+    padding: 0 10px;
+    height: 80px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--hovercolormain);
+    border-left: 1px solid var(--hovercolormain)
+}
+
+.text1:hover,
+.text2:hover,
+.text3:hover,
+.gambar:hover {
+    transition: all ease 0.3s;
+    background: var(--hovercolormain)
+}
+
+.pencarian {
+    grid-area: 1/5/2/6;
+    display: flex;
+    justify-content: center;
+}
+
+.pencarian .mobile {
+    display: none;
+}
+
+.notifikasi {
+    display: flex;
+    justify-content: center;
+    font-size: 0.5rem;
+    background-color: var(--colornotif);
+    padding: 15px;
+    font-weight: 700;
+}
+
+.lebarnotif {
+    margin-top: 80px;
+    width: var(--max-width);
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    align-items: center;
+}
+
+.klik {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.klik a {
+    background-color: var(--colorsekunder);
+    padding: 5px 10px;
+    border-radius: var(--border-radius);
+    font-weight: 1000;
+}
+
+.klik a:hover {
+    transition: all ease 0.2s;
+    background-color: var(--colormain);
+    color: var(--colorsekunder);
+}
+
+
+@media only screen and (max-width: 767px) {
+
+    .lebarnotif {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .lebarnotif .text {
+        grid-area: 1/1/2/3;
+        text-align: center;
+    }
+
+    .lebarnotif .klik {
+        grid-area: 2/1/3/4;
+    }
+
+    .container {
+        grid-template-columns: 200px 1fr 1fr 1fr 1fr;
+    }
+
+    .pencarian .deskop {
+        display: none;
+    }
+
+    .pencarian .mobile {
+        display: flex;
+    }
+
+    .atas {
+        font-size: 0.5rem;
+    }
+
+}
+
+
+@media only screen and (max-width: 480px) {
+
+    .container {
+        grid-template-columns: 200px 1fr 1fr 1fr;
+    }
+
+    .text3 {
+        display: none;
+    }
+
+    .text2 {
+        border-right: 1px solid var(--hovercolormain);
+    }
+
+    .pencarian {
+        grid-area: 1/4/2/5;
+    }
+}

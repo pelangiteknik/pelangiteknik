@@ -1,0 +1,240 @@
+.containerluar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.dalamkontainer {
+    width: var(--max-width);
+}
+
+.banner {
+    display: flex;
+    gap: 30px;
+}
+
+.gambar {
+    width: 50%;
+    height: 400px;
+    position: absolute;
+    right: 0;
+    /* background-color: red; */
+}
+
+.gambar img {
+    width: 100%;
+    height: 100%;
+    /* position: absolute; */
+    /* object-fit: contain; */
+    /* height: auto; */
+}
+
+.banner .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 550px;
+    height: 400px;
+    padding: 20px;
+}
+
+.banner .judul {
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.banner .desc {
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+/* FILLTER */
+.bawah {
+    padding: 30px 0;
+    display: flex;
+    gap: 20px;
+}
+
+.bawah .filter {
+    /* height: 500px; */
+    height: fit-content;
+    width: 300px;
+    background-color: var(--colorsekunder);
+    border-radius: var(--border-radius);
+}
+
+.bawah .filter .judul {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+}
+
+.bawah .filter .kategori .list {
+    font-weight: 500;
+    padding: 15px 15px 15px 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bawah .filter .kategori .list:hover {
+    transition: all ease 0.2s;
+    background-color: var(--colormain);
+    color: var(--colorsekunder);
+    cursor: pointer;
+}
+
+
+.bawah .listproduct {
+    width: 100%;
+    /* background-color: blue; */
+}
+
+.bawah .gambarbawah {
+    width: 100%;
+    position: relative;
+}
+
+.bawah .gambarbawah img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.bawah .gambarbawah .wm {
+    position: absolute;
+    top: 0;
+}
+
+.bawah .name {
+    font-weight: 500;
+}
+
+.bawah .price {
+    font-weight: 500;
+}
+
+.bawah .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-gap: 10px;
+    gap: 20px;
+}
+
+.bawah .listproduct .kotak {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* background-color: yellow; */
+    background-color: var(--colorsekunder);
+    border-radius: var(--border-radius);
+}
+
+.bawah .listproduct .price {
+    color: var(--colormain);
+}
+
+.bawah .listproduct .kotak:hover {
+    transition: all ease 0.2s;
+    box-shadow: 0px 0px 0px 5px var(--colormain);
+    -webkit-box-shadow: 0px 0px 0px 5px var(--colormain);
+    -moz-box-shadow: 0px 0px 0px 5px var(--colormain);
+    overflow: hidden;
+}
+
+.bawah .listproduct .kotak:hover img {
+    transition: all ease 0.2s;
+    scale: 1.08;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .banner {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
+    .banner .gambar {
+        width: 100%;
+    }
+
+    .gambar {
+        position: inherit;
+        height: auto;
+    }
+
+
+
+    .gambar img {
+        height: auto;
+    }
+
+    .banner .text {
+        width: 100%;
+        height: auto;
+    }
+
+    .banner .gambar img {
+        width: 100%;
+        object-position: center;
+        object-fit: contain;
+    }
+
+    .banner .judul {
+        font-size: 1.5rem;
+    }
+
+    .banner .text {
+        width: 100%;
+    }
+
+    /* .bawah .filter {
+        display: none;
+    } */
+
+    .bawah {
+        flex-direction: column;
+    }
+
+    .bawah .filter {
+        width: 100%;
+    }
+
+    .bawah .grid {
+        padding: 0 20px;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+    .banner .judul {
+        font-size: 1rem;
+    }
+
+    .containerluar {
+        font-size: 0.6rem;
+    }
+
+
+    .bawah .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        grid-gap: 5px;
+        gap: 5px;
+        padding: 0 10px;
+
+    }
+}

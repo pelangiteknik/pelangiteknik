@@ -8,9 +8,12 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "author": "natanaelriowijaya",
   "dependencies": {
+    "next": "14.2.5",
+    "pnpm": "^9.6.0",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.5"
+    "react-icons": "^5.2.1"
   }
 }

@@ -1,0 +1,99 @@
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.dalamcontainer {
+    /* background-color: rgb(221, 221, 221); */
+    width: var(--max-width);
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+
+
+
+.swipper .gambar {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    /* border: 1px solid var(--colormain); */
+}
+
+
+.swipper .gambar img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.swipper .gambar .wm {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: 0;
+}
+
+
+.review {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-weight: 500;
+    padding: 50px 0;
+}
+
+
+.review .price {
+    color: var(--colormain);
+    font-size: 1.5rem;
+}
+
+.review button {
+    background-color: var(--colormain);
+    color: var(--colorsekunder);
+    height: 50px;
+    font-weight: 500;
+    border: 0;
+    font-size: 0.8rem;
+    width: 100%;
+    border-radius: var(--border-radius);
+}
+
+.review button:hover {
+    cursor: pointer;
+    transition: all ease 0.2s;
+    background-color: var(--hovercolormain);
+}
+
+.review .buu {
+    width: 100%;
+}
+
+.review .buu .stock {
+    text-align: right;
+    font-size: 0.8rem;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .swipper .gambar {
+        width: 100%;
+        height: 500px;
+    }
+
+    .swipper .gambar img {
+        object-fit: contain;
+    }
+
+    .dalamcontainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .review {
+        padding: 0;
+    }
+}
