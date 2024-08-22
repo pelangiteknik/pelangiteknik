@@ -49,7 +49,7 @@
 }
 
 .gambar {
-    width: 200px;
+    width: 100%;
 }
 
 .gambar img {
@@ -70,4 +70,9 @@
     .text {
         font-size: 0.8rem;
     }
+
+    .kotakisi {
+        padding: 0;
+    }
+
 }

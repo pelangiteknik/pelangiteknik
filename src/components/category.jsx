@@ -18,11 +18,11 @@ export default function Category({ data }) {
                         // Mengganti spasi dengan tanda "-"
                         const finalString = lowerCaseString?.replace(/ /g, '-');
                         return (
-                            <Link 
-                            key={i} 
-                            target="_blank" 
-                            href={`/category/` + finalString} 
-                            className={styles.kotakisi}>
+                            <Link
+                                key={i}
+                                target="_blank"
+                                href={`/category/` + finalString}
+                                className={styles.kotakisi}>
                                 <div className={styles.gambar}>
                                     <Image
                                         src={data?.url_image}
