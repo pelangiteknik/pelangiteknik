@@ -26,7 +26,7 @@ export default function Product({ data }) {
                                 />
                                 <div className={styles.wm}>
                                     <Image
-                                        src={'https://pelangiteknik.vercel.app/wm.png'}
+                                        src={`${process.env.NEXT_PUBLIC_URL}/wm.png`}
                                         alt={'wm'}
                                         width={400}
                                         height={400}

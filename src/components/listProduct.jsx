@@ -105,7 +105,7 @@ export default function ListProduct({ Listdata, Category, FilterCategory, SubCat
                                                 </Image>
                                                 <div className={styles.wm}>
                                                     <Image
-                                                        src={'https://pelangiteknik.vercel.app/wm.png'}
+                                                        src={`${process.env.NEXT_PUBLIC_URL}/wm.png`}
                                                         alt={'wm'}
                                                         width={250}
                                                         height={200}
