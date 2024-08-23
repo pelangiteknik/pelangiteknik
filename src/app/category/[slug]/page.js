@@ -1,12 +1,14 @@
+import BannerKategori from "@/components/bannerKategori";
 import HeaderFooter from "@/components/layout/headerFooter";
 import ListProduct from "@/components/listProduct";
 
-export async function ListProducts(id) {
+export async function ListProducts(id, kondisi) {
     const res = await fetch('https://api-ecom.tsuzumijapan.com/api/product.list')
     const data = await res.json()
-    return data.data.filter((data) => data.category_name.toLowerCase().replace(/ /g, '-') == id)
+    return kondisi ?
+        data.data.filter((data) => data.is_best_product && true) :
+        data.data.filter((data) => data.category_name.toLowerCase().replace(/ /g, '-') == id)
 }
-
 
 export async function FCategory(id) {
     const res = await fetch('https://api-ecom.tsuzumijapan.com/api/category.list')
@@ -28,19 +30,23 @@ export async function FSubCategory() {
 }
 
 export default async function Page({ params }) {
-    const dataListdata = await ListProducts(params.slug)
-    const dataCategory = await FCategory(params.slug)
-    const dataFilterCategory = await FilterCategory()
-    const SubCategory = await FSubCategory()
+    const [dataListdata, dataCategory, dataFilterCategory, SubCategory] = await Promise.all([
+        ListProducts(params.slug, params.slug == 'best-products'),
+        FCategory(params.slug),
+        FilterCategory(),
+        FSubCategory(),
+    ])
 
     return (
         <HeaderFooter >
-            <ListProduct
-                Listdata={dataListdata}
-                Category={dataCategory}
-                FilterCategory={dataFilterCategory}
-                SubCategory={SubCategory}
-                id={params.slug} />
+            <div>
+                <BannerKategori Category={dataCategory} />
+                <ListProduct
+                    Listdata={dataListdata}
+                    FilterCategory={dataFilterCategory}
+                    Lfilter={true}
+                />
+            </div>
         </HeaderFooter>
     );
 }

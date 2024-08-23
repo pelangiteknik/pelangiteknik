@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.containerdalam {
+    width: var(--max-width);
+}
+
+.kotak1 {
+    position: absolute;
+    left: 0;
+    height: 400px;
+    z-index: 10;
+    width: calc((100% - var(--max-width))/2);
+    background: var(--colorthrid);
+    -webkit-box-shadow: 20px 4px 27px -3px #1A1918;
+    box-shadow: 20px 4px 27px -3px #1A1918;
+}
+
+
+.kotak2 {
+    position: absolute;
+    right: 0;
+    height: 400px;
+    z-index: 10;
+    width: calc((100% - var(--max-width))/2);
+    background: var(--colorthrid);
+    -webkit-box-shadow: -20px 4px 27px -3px #1A1918;
+    box-shadow: -20px 4px 27px -3px #1A1918;
+}
+
+
+@media only screen and (max-width: 1000px) {
+
+    .kotak1,
+    .kotak2 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .containerdalam {
+        width: 100%;
+    }
+}

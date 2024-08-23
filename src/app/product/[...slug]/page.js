@@ -30,8 +30,6 @@ export async function FSubCategory() {
 export default async function Page({ params }) {
     const dataListdata = await ListProduct(params.slug)
 
-    console.log(params);
-    
     return (
         <HeaderFooter >
             <Product

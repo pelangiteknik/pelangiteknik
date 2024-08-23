@@ -10,7 +10,6 @@ export default function Category({ data }) {
     return (
         <div className={styles.container}>
             <div className={styles.dalamcontainer}>
-                <div className={styles.judul}>Categories By Pelangi Teknik</div>
                 <div className={styles.grid}>
                     {dataCategory.map((data, i) => {
                         // Mengubah semua huruf menjadi huruf kecil

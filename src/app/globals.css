@@ -10,6 +10,7 @@
   --colornotif: #ffdf00 !important;
   --colorbggrey: #777577 !important;
   --colorgrey: #30302f !important;
+  --colorbggreyutama: #e7e7e9 !important;
   font-size: 25px;
 }
 
@@ -47,16 +48,52 @@ button {
   border: 0;
 }
 
-@media (min-width: 481px) and (max-width: 767px) {
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  height: 400px !important;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+@media only screen and (max-width: 767px) {
   h1 {
     font-size: 0.7rem;
+  }
+
+  .swiper-slide {
+    height: 100% !important;
+  }
+
+  .swiper-slide img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
 }
 
 
-@media (min-width: 320px) and (max-width: 480px) {
-
+@media only screen and (max-width: 480px) {
   h1 {
     font-size: 0.7rem;
   }

@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 2rem;
+    padding: 30px 0;
+    color: var(--colorthrid);
+}
+
+.dalamkontainer {
+    width: var(--max-width);
+    font-weight: 700;
+    width: fit-content;
+    border-bottom: 4px solid var(--colormain);
+}
+
+@media only screen and (max-width: 767px) {
+    .container {
+        font-size: 1.5rem;
+        padding: 30px 0 0 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container {
+        font-size: 1rem;
+    }
+}
