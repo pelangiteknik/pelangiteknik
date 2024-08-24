@@ -1,6 +1,8 @@
 import HeaderFooter from "@/components/layout/headerFooter";
 import Product from "@/components/product";
 
+export const dynamic = 'force-dynamic'
+
 export async function ListProduct(id) {
     const res = await fetch('https://api-ecom.tsuzumijapan.com/api/product.list')
     const data = await res.json()

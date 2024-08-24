@@ -2,6 +2,8 @@ import BannerKategori from "@/components/bannerKategori";
 import HeaderFooter from "@/components/layout/headerFooter";
 import ListProduct from "@/components/listProduct";
 
+export const dynamic = 'force-dynamic'
+
 export async function ListProducts(id, kondisi) {
     const res = await fetch('https://api-ecom.tsuzumijapan.com/api/product.list')
     const data = await res.json()

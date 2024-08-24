@@ -5,6 +5,8 @@ import Judul from "@/components/judul";
 import HeaderFooter from "@/components/layout/headerFooter";
 import ListProduct from "@/components/listProduct";
 
+export const dynamic = 'force-dynamic'
+
 export async function FCategory() {
   const res = await fetch('https://api-ecom.tsuzumijapan.com/api/category.list')
   const data = await res.json()
