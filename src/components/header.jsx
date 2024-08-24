@@ -30,6 +30,8 @@ export default function Header() {
     setProduct(!product)
   }
 
+  console.log(data)
+
   return (
     <header className={styles.header}>
       <div className={styles.atas}>
