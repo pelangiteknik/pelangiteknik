@@ -15,7 +15,7 @@ export default function Header() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch('https://api-ecom.tsuzumijapan.com/api/category.list')
+        const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/category.json`)
         const data = await res.json()
         setData(data?.data)
       } catch (error) {
@@ -29,8 +29,6 @@ export default function Header() {
   const HandlePilihProduct = () => {
     setProduct(!product)
   }
-
-  console.log(data)
 
   return (
     <header className={styles.header}>
