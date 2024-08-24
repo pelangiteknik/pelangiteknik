@@ -5,7 +5,7 @@ import Search from "@/components/search";
 import { IoIosArrowForward } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Header() {
 
@@ -13,13 +13,18 @@ export default function Header() {
   const [product, setProduct] = useState(false)
 
   useEffect(() => {
-    const FetchData = async () => {
-      const res = await fetch('https://api-ecom.tsuzumijapan.com/api/category.list')
-      const data = await res.json()
-      setData(data?.data)
+    const fetchData = async () => {
+      try {
+        const res = await fetch('https://api-ecom.tsuzumijapan.com/api/category.list')
+        const data = await res.json()
+        setData(data?.data)
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
     }
-    return FetchData
-  }, [data])
+
+    fetchData()
+  }, [])
 
   const HandlePilihProduct = () => {
     setProduct(!product)
