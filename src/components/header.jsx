@@ -28,7 +28,7 @@ export default function Header() {
           <Link href={'/'} className={styles.gambar}>
             <Image src={`${process.env.NEXT_PUBLIC_URL}/logo.svg`} height={80} width={400} alt="logo" />
           </Link>
-          <a className={styles.text1} onClick={HandlePilihProduct}>PRODUK</a>
+          <a className={styles.text1} onClick={() => HandlePilihProduct()}>PRODUK</a>
           <a className={styles.text2}>BLOG</a>
           <a className={styles.text3}>ABOUT</a>
           <div className={styles.pencarian}>
