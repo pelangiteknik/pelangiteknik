@@ -101,4 +101,8 @@
     .banner .judul {
         font-size: 1rem;
     }
+
+    .banner .desc {
+        font-size: 0.6rem;
+    }
 }

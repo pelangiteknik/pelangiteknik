@@ -1,6 +1,6 @@
 'use client'
 import styles from '@/components/product.module.css'
-import { convertToRupiah } from '@/utils/ConvertRupiah';
+import convertToRupiah from '@/utils/ConvertRupiah'
 import Image from 'next/image';
 
 export default function Product({ data }) {
@@ -42,15 +42,15 @@ export default function Product({ data }) {
 
                 <div className={styles.review}>
                     <div className={styles.judul}>
-                        {dataku.name}
+                        {dataku?.name}
                     </div>
 
                     <div className={styles.price}>
-                        {convertToRupiah(dataku.price)}
+                        {convertToRupiah(dataku?.price)}
                     </div>
                     <div className={styles.buu}>
                         <div className={styles.stock}>
-                            Stock:  {dataku.stock}
+                            Stock:  {dataku?.stock}
                         </div>
                         <button onClick={handleBeliSekarang}>
                             Beli Sekarang

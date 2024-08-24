@@ -1,25 +1,24 @@
-import BannerKategori from "@/components/bannerKategori";
 import HeaderFooter from "@/components/layout/headerFooter";
 import ListProduct from "@/components/listProduct";
-import { FCategory, ListFilterProductsKategori, ListProductsKategori } from "@/service/user";
+import { ListProductsSearch, FCategory } from "@/service/user";
 
 export const dynamic = 'force-dynamic'
 
 export default async function Page({ params }) {
-    const [dataListdata, dataCategory, dataFCategory] = await Promise.all([
-        ListProductsKategori(params.slug, params.slug == 'best-products'),
-        ListFilterProductsKategori(params.slug),
+
+    const [dataListProducts, dataFCategory] = await Promise.all([
+        ListProductsSearch(params.search),
         FCategory(),
     ])
 
     return (
         <HeaderFooter >
             <div>
-                <BannerKategori Category={dataCategory} />
                 <ListProduct
-                    Listdata={dataListdata}
+                    Listdata={dataListProducts}
                     FilterCategory={dataFCategory}
                     Lfilter={true}
+                    pencarian={true}
                 />
             </div>
         </HeaderFooter>

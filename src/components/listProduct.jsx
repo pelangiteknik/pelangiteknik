@@ -1,13 +1,15 @@
 'use client'
 import styles from '@/components/listProduct.module.css'
-import { convertToRupiah } from '@/utils/ConvertRupiah'
+import convertToRupiah from '@/utils/ConvertRupiah'
 import useWindowDimensions from '@/utils/getWindowDimensions'
+import { useStore } from "@/zustand/zustand";
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import { CiFilter } from "react-icons/ci";
+import Judul from './judul';
 
-export default function ListProduct({ Listdata, FilterCategory, Lfilter }) {
+export default function ListProduct({ Listdata, FilterCategory, Lfilter, pencarian }) {
     const filter = FilterCategory?.data
     const { width } = useWindowDimensions()
     const kondisiLebar = width <= 1000
@@ -16,9 +18,12 @@ export default function ListProduct({ Listdata, FilterCategory, Lfilter }) {
     const handleKategori = () => {
         kondisiLebar ? setKategori(!kategori) : setKategori(true)
     }
+    const searchTerm = useStore((state) => state.searchTerm)
+
     return (
         <div className={styles.container}>
             <div className={styles.dalamkontainer}>
+                {pencarian && <Judul judul={searchTerm} />}
                 <div className={styles.bawah}>
                     {Lfilter &&
                         <div className={styles.filter}>

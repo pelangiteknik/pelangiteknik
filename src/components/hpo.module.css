@@ -23,11 +23,11 @@
 }
 
 .list:nth-child(1) {
-    border-right: 1px solid var(--colorbggrey);
+    border-right: 1px solid var(--colorbggreyutama);
 }
 
 .list:nth-child(3) {
-    border-left: 1px solid var(--colorbggrey);
+    border-left: 1px solid var(--colorbggreyutama);
 }
 
 

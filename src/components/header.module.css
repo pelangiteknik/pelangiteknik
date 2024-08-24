@@ -46,7 +46,14 @@
     align-items: center;
     justify-content: center;
     border-right: 1px solid var(--hovercolormain);
-    border-left: 1px solid var(--hovercolormain)
+    border-left: 1px solid var(--hovercolormain);
+    position: relative;
+    overflow: hidden;
+}
+
+.ikon {
+    position: absolute;
+    bottom: -10px;
 }
 
 .text2 {
@@ -170,6 +177,7 @@
     grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
     grid-gap: 5px;
     gap: 5px;
+    padding: 10px;
 }
 
 .kotak {
@@ -178,10 +186,33 @@
     background-color: var(--colorsekunder);
     justify-content: center;
     align-items: center;
+    /* padding: 10px 0; */
+}
+
+.kotak:hover {
+    transition: all ease 0.2s;
+    box-shadow: 0px 0px 0px 5px var(--colormain);
+    -webkit-box-shadow: 0px 0px 0px 5px var(--colormain);
+    -moz-box-shadow: 0px 0px 0px 5px var(--colormain);
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .kotak img {
     object-fit: contain;
+}
+
+
+@media only screen and (max-width: 1080px) {
+
+    .dalamkontainer {
+        width: 100%;
+    }
+
+
+    .isimelayangdalam {
+        width: 100%;
+    }
 }
 
 
@@ -216,14 +247,8 @@
         font-size: 0.5rem;
     }
 
-
     .isimelayangdalam {
-        width: 100%;
         min-height: 80dvh;
-    }
-
-    .dalamkontainer {
-        width: 100%;
     }
 
 }
@@ -245,5 +270,9 @@
 
     .pencarian {
         grid-area: 1/4/2/5;
+    }
+
+    .dalamkontainer {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     }
 }

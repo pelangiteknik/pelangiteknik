@@ -4,24 +4,15 @@ import Hpo from "@/components/hpo";
 import Judul from "@/components/judul";
 import HeaderFooter from "@/components/layout/headerFooter";
 import ListProduct from "@/components/listProduct";
+import { ListProductsBest, FCategory } from "@/service/user";
 
 export const dynamic = 'force-dynamic'
 
-export async function FCategory() {
-  const res = await fetch('https://api-ecom.tsuzumijapan.com/api/category.list')
-  const data = await res.json()
-  return data
-}
-
-export async function ListProductsBest() {
-  const res = await fetch('https://api-ecom.tsuzumijapan.com/api/product.list')
-  const data = await res.json()
-  return data.data.filter((data) => data.is_best_product && true)
-}
-
 export default async function Home() {
-  const data = await FCategory()
-  const dataBest = await ListProductsBest()
+  const [data, dataBest] = await Promise.all([
+    FCategory(),
+    ListProductsBest(),
+  ])
 
   return (
     <HeaderFooter >
