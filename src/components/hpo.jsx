@@ -8,19 +8,25 @@ export default function Hpo() {
         <div className={styles.container}>
             <div className={styles.containerdalam}>
                 <div className={styles.list} >
-                    <RiQuestionnaireFill size={30} className={styles.help} />
-                    HELP CENTER
+                    <RiQuestionnaireFill className={styles.help} />
+                    <div className={styles.text}>
+                        HELP CENTER
+                    </div>
                 </div>
                 <div className={styles.list} >
-                    <FaRegEdit size={30} className={styles.productregistion} />
-                    PRODUCT REGISTRATION
+                    <FaRegEdit className={styles.productregistion} />
+                    <div className={styles.text}>
+                        PRODUCT REGISTRATION
+                    </div>
                 </div>
                 <Link
                     href={'/shop'}
                     target='_blank'
                     className={styles.list} >
-                    <RiKeyboardBoxFill size={30} className={styles.orderparts} />
-                    ORDER PARTS
+                    <RiKeyboardBoxFill className={styles.orderparts} />
+                    <div className={styles.text}>
+                        ORDER PARTS
+                    </div>
                 </Link>
             </div>
         </div>

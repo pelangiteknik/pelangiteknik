@@ -98,4 +98,12 @@ button {
     font-size: 0.7rem;
   }
 
+
+  .swiper-slide {
+    height: 150px !important;
+  }
+
+  .swiper-slide img {
+    object-fit: cover;
+  }
 }

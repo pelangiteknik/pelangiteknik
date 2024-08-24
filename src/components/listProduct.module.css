@@ -8,6 +8,7 @@
 
 .dalamkontainer {
     width: var(--max-width);
+    overflow: hidden;
 }
 
 /* FILLTER */
@@ -81,6 +82,7 @@
     grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
     grid-gap: 10px;
     gap: 20px;
+    padding: 0 20px;
 }
 
 .bawah .listproduct .kotak {
@@ -123,6 +125,10 @@
 
     .bawah .grid {
         padding: 0 20px;
+    }
+
+    .dalamkontainer {
+        width: 100%
     }
 }
 

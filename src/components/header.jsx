@@ -5,18 +5,20 @@ import Search from "@/components/search";
 import { IoIosArrowForward } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
 import Link from "next/link";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 export default function Header() {
 
   const [data, setData] = useState([])
+
   const [product, setProduct] = useState(false)
-  const HandlePilihProduct = async () => {
+
+  const HandlePilihProduct = useCallback(async (orderDetails) => {
     const res = await fetch('https://api-ecom.tsuzumijapan.com/api/category.list')
     const data = await res.json()
     setData(data?.data)
     setProduct(!product)
-  }
+  }, []);
 
   return (
     <header className={styles.header}>
