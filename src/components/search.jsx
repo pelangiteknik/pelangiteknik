@@ -18,8 +18,8 @@ export default function Search() {
     const handleSubmit = (event) => {
         event.preventDefault();
         // handle search logic here
-        router.push(`/search/${searchTerm}`)
-        console.log(`Searching for ${searchTerm}...`);
+        router.push(`/search/${cari}`)
+        console.log(`Searching for ${cari}...`);
         setSearchTerm(cari)
     }
 
