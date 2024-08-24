@@ -19,7 +19,7 @@ export default function Header() {
       setData(data?.data)
     }
     return FetchData
-  }, [])
+  }, [data])
 
   const HandlePilihProduct = () => {
     setProduct(!product)
