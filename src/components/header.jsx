@@ -13,12 +13,13 @@ export default function Header() {
 
   const [product, setProduct] = useState(false)
 
-  const HandlePilihProduct = useCallback(async (orderDetails) => {
+  const HandlePilihProduct = useCallback(async () => {
     const res = await fetch('https://api-ecom.tsuzumijapan.com/api/category.list')
     const data = await res.json()
     setData(data?.data)
     setProduct(!product)
-  }, []);
+  }, [product])
+
 
   return (
     <header className={styles.header}>
@@ -52,7 +53,9 @@ export default function Header() {
         {
           product &&
           <>
-            <div className={styles.melayang} onClick={() => setProduct(!product)}></div>
+            <div className={styles.melayang}
+              style={product ? { transition: 'all ease 1s', opacity: 0.3 } : { transition: 'all ease 1s', opacity: 0.3 }}
+              onClick={() => setProduct(!product)}></div>
             <div className={styles.isimelayang}>
               <div className={styles.isimelayangdalam}>
                 <div className={styles.dalamkontainer}>
