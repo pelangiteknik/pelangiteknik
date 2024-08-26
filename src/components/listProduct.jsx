@@ -42,7 +42,7 @@ export default function ListProduct({ Listdata, FilterCategory, Lfilter, pencari
                                         return (
                                             <Link
                                                 key={i}
-                                                target="_blank"
+                                                // target="_blank"
                                                 href={`/category/` + finalString}
                                                 className={styles.list}>
                                                 <div className={styles.gambarikon}>
@@ -68,7 +68,7 @@ export default function ListProduct({ Listdata, FilterCategory, Lfilter, pencari
                             {Listdata.map((data, i) => {
                                 return (
                                     <Link
-                                        target='_blank'
+                                        // target="_blank"
                                         href={`/product/${data?.slug}`}
                                         className={styles.kotak}
                                         key={i}>

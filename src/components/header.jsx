@@ -7,12 +7,16 @@ import { BsFillTriangleFill } from "react-icons/bs";
 import { FaSearch } from "react-icons/fa";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useStore } from "@/zustand/zustand";
+import ProductHeaderMelayang from "./productHeaderMelayang";
 
 export default function Header() {
-  const router = useRouter()
   const [data, setData] = useState([])
-  const [product, setProduct] = useState(false)
+  const searchTermClose = useStore((state) => state.searchTermClose)
+  const setSearchTermClose = useStore((state) => state.setSearchTermClose)
+
+  const productMelayangHeader = useStore((state) => state.productMelayangHeader)
+  const setProductMelayangHeader = useStore((state) => state.setProductMelayangHeader)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,12 +33,11 @@ export default function Header() {
   }, [])
 
   const HandlePilihProduct = () => {
-    setProduct(!product)
+    setProductMelayangHeader()
   }
 
-  const handleKlikProduct = (e) => {
-    router.push(`/category/` + e)
-    setProduct(!product)
+  const handlePencarian = () => {
+    setSearchTermClose()
   }
 
   return (
@@ -44,24 +47,34 @@ export default function Header() {
           <Link href={'/'} className={styles.gambar}>
             <Image src={`${process.env.NEXT_PUBLIC_URL}/logo.svg`} height={80} width={400} alt="logo" />
           </Link>
-          <a className={styles.text1}
+          <div className={styles.text1}
             onClick={() => HandlePilihProduct()}
-            style={product ? { background: ' var(--colorthrid)' } : {}}
+            style={productMelayangHeader ? { background: ' var(--colorthrid)' } : {}}
           >
-            {product && <div className={styles.ikon}>
+            {productMelayangHeader && <div className={styles.ikon}>
               <BsFillTriangleFill color="var(--colorbggreyutama)" />
             </div>}
-            PRODUK</a>
+            PRODUK
+          </div>
           <a className={styles.text2}>BLOG</a>
-          <a className={styles.text3}>ABOUT</a>
-          <div className={styles.pencarian}>
+          <Link href={`/about`} className={styles.text3}>ABOUT</Link>
+
+          <div className={styles.pencariandeskop}>
             <div className={styles.deskop}>
               <Search />
             </div>
+          </div>
+
+          <div className={styles.pencarianmobile} onClick={handlePencarian}>
             <div className={styles.mobile}>
               <FaSearch color="white" />
             </div>
           </div>
+          {searchTermClose &&
+            <div className={styles.pencarianklik}>
+              <Search />
+            </div>}
+
         </div>
       </div>
       <div className={styles.notifikasi} >
@@ -74,38 +87,10 @@ export default function Header() {
         </div>
 
         {
-          product &&
-          <>
-            <div className={styles.melayang}
-              onClick={() => setProduct(!product)}></div>
-            <div className={styles.isimelayang}>
-              <div className={styles.isimelayangdalam}>
-                <div className={styles.dalamkontainer}>
-                  {data.map((data, i) => {
-                    // Mengubah semua huruf menjadi huruf kecil
-                    const lowerCaseString = data?.name.toLowerCase();
-                    // Mengganti spasi dengan tanda "-"
-                    const finalString = lowerCaseString?.replace(/ /g, '-');
-                    return (
-                      <div
-                        className={styles.kotak}
-                        key={i}
-                        onClick={() => handleKlikProduct(finalString)}
-                      >
-                        <Image
-                          src={data.url_image}
-                          alt={data.name}
-                          width={100}
-                          height={100}
-                        />
-                        {data.name}
-                      </div>
-                    )
-                  })}
-                </div>
-              </div>
-            </div>
-          </>
+          productMelayangHeader &&
+          <ProductHeaderMelayang
+            data={data}
+          />
         }
 
       </div>

@@ -22,3 +22,29 @@
     padding: 0 20px;
     cursor: pointer;
 }
+
+.mobile {
+    display: none;
+}
+
+.close {
+    display: none;
+    color: var(--colorsekunder);
+    font-weight: 700;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: flex;
+        font-size: 40px;
+    }
+
+    .close {
+        display: block;
+    }
+}

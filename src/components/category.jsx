@@ -19,7 +19,7 @@ export default function Category({ data }) {
                         return (
                             <Link
                                 key={i}
-                                target="_blank"
+                                // target="_blank"
                                 href={`/category/` + finalString}
                                 className={styles.kotakisi}>
                                 <div className={styles.gambar}>
