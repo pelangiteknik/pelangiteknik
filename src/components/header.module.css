@@ -195,8 +195,8 @@
     }
 
     .pencarianmobile .mobile {
-        display: block;
-        width: 100%;
+        display: flex;
+        /* width: 100%; */
         padding: 30px;
         display: flex;
         justify-content: center;
