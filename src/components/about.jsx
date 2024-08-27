@@ -1,4 +1,5 @@
 import styles from '@/components/about.module.css'
+import Image from 'next/image'
 
 export default function About() {
     return (
@@ -7,7 +8,12 @@ export default function About() {
                 <div className={styles.judul}>Hi, We're PT Pelangi Teknik Indonesia</div>
                 <div className={styles.desc1}>
                     <div className={styles.gambar}>
-
+                        <Image
+                            src={`${process.env.NEXT_PUBLIC_URL}/about1.jpg`}
+                            alt='about1'
+                            width={500}
+                            height={500}
+                        ></Image>
                     </div>
                     <div className={styles.text}>
                         <div>
@@ -35,7 +41,12 @@ export default function About() {
                         </div>
                     </div>
                     <div className={styles.gambar}>
-
+                    <Image
+                            src={`${process.env.NEXT_PUBLIC_URL}/visimisi.png`}
+                            alt='about1'
+                            width={500}
+                            height={500}
+                        ></Image>
                     </div>
                 </div>
             </div>

@@ -45,7 +45,7 @@ export default function Header() {
       <div className={styles.atas}>
         <div className={styles.container}>
           <Link href={'/'} className={styles.gambar}>
-            <Image src={`${process.env.NEXT_PUBLIC_URL}/logo.svg`} height={80} width={400} alt="logo" />
+            <Image src={`${process.env.NEXT_PUBLIC_URL}/logo.png`} height={80} width={400} alt="logo" />
           </Link>
           <div className={styles.text1}
             onClick={() => HandlePilihProduct()}
