@@ -74,10 +74,10 @@ export default function Product({ data }) {
                                     return (
                                         <SwiperSlide key={i}>
                                             <Image
-                                                src={data.image}
+                                                src={data?.image}
                                                 width={500}
                                                 height={500}
-                                                alt={data.id}>
+                                                alt={data?.id}>
                                             </Image>
                                         </SwiperSlide>
                                     )
@@ -99,7 +99,7 @@ export default function Product({ data }) {
                                 >
                                     {dataku?.productImages.map((data, i) => {
                                         return (
-                                            <SwiperSlide key={i}><Image src={data.image} width={500} height={500} alt={data.id}></Image></SwiperSlide>
+                                            <SwiperSlide key={i}><Image src={data?.image} width={500} height={500} alt={data?.id}></Image></SwiperSlide>
                                         )
                                     })}
 
