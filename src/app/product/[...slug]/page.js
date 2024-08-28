@@ -7,7 +7,10 @@ export const dynamic = 'force-dynamic'
 export default async function Page({ params }) {
 
     const dataIdProduk = await IdProduk(params.slug)
+    console.log('id', dataIdProduk);
+
     const dataProduk = await Produk(dataIdProduk)
+    console.log('produk', dataProduk);
 
     return (
         <HeaderFooter >
