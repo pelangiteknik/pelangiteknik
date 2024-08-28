@@ -30,16 +30,16 @@ export default function Product({ data }) {
 
     // SWIPEER
     const swiperRef = useRef(null);
-    const goNext = () => {
-        if (swiperRef.current && swiperRef.current.swiper) {
-            swiperRef.current.swiper.slideNext();
-        }
-    };
-    const goPrev = () => {
-        if (swiperRef.current && swiperRef.current.swiper) {
-            swiperRef.current.swiper.slidePrev();
-        }
-    };
+    // const goNext = () => {
+    //     if (swiperRef.current && swiperRef.current.swiper) {
+    //         swiperRef.current.swiper.slideNext();
+    //     }
+    // };
+    // const goPrev = () => {
+    //     if (swiperRef.current && swiperRef.current.swiper) {
+    //         swiperRef.current.swiper.slidePrev();
+    //     }
+    // };
     const [thumbsSwiper, setThumbsSwiper] = useState(null)
 
     // const { height, width } = useWindowDimensions()
