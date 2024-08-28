@@ -4,14 +4,8 @@ import convertToRupiah from '@/utils/ConvertRupiah'
 import Image from 'next/image';
 import ProductDetail from '@/components/productDetail';
 import ProductSpecs from '@/components/productSpecs';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { FaCaretUp } from "react-icons/fa"
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Thumbs } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import { Pagination, FreeMode } from 'swiper/modules';
 
 export default function Product({ data }) {
     const dataku = data?.data
@@ -20,7 +14,6 @@ export default function Product({ data }) {
         alert('otwww')
     }
 
-
     const [pilihan, setPilihan] = useState('detail')
 
     const handlePilihBawah = (e) => {
@@ -28,89 +21,12 @@ export default function Product({ data }) {
         e == 'specs' && setPilihan('specs')
     }
 
-    // SWIPEER
-    const swiperRef = useRef(null);
-    // const goNext = () => {
-    //     if (swiperRef.current && swiperRef.current.swiper) {
-    //         swiperRef.current.swiper.slideNext();
-    //     }
-    // };
-    // const goPrev = () => {
-    //     if (swiperRef.current && swiperRef.current.swiper) {
-    //         swiperRef.current.swiper.slidePrev();
-    //     }
-    // };
-    const [thumbsSwiper, setThumbsSwiper] = useState(null)
-
-    // const { height, width } = useWindowDimensions()
-    // const kondisiLebarTumb = width <= 1133 && width - 607
-    // const hasWindow = typeof window !== 'undefined';
-    // const [kondisiLebar, setKondisiLebar] = useState('')
-
-    // const mediaMatch = hasWindow ? window.matchMedia('(max-width: 768px)').matches : null
-
     return (
         <div className={styles.container}>
             <div className={styles.dalamcontainer}>
 
                 <div className={styles.atas}>
-                    <div className={styles.swipperexluar}>
-                        <div className={styles.swipperex}>
-
-                            <Swiper
-                                modules={[FreeMode, Thumbs, Pagination]}
-                                thumbs={{ swiper: thumbsSwiper }}
-                                pagination={{
-                                    type: 'fraction',
-                                }}
-                                ref={swiperRef}
-                                loop={true}
-                                zoom={true}
-                                className='mySwipper2'
-                                id='mysW'
-                            >
-
-                                {dataku?.productImages?.map((data, i) => {
-                                    return (
-                                        <SwiperSlide key={i}>
-                                            <Image
-                                                src={data?.image}
-                                                width={500}
-                                                height={500}
-                                                alt={data?.id}>
-                                            </Image>
-                                        </SwiperSlide>
-                                    )
-                                })}
-                            </Swiper>
-
-                            {/* BAWAH DESKTOP GAMBAR */}
-                            <div className={styles.bawahsildder}>
-                                <Swiper
-                                    loop={false}
-                                    onSwiper={setThumbsSwiper}
-                                    spaceBetween={5}
-                                    slidesPerView={'auto'}
-                                    freeMode={true}
-                                    watchSlidesProgress={true}
-                                    modules={[FreeMode, Thumbs]}
-                                    className='mySwipper'
-                                // style={{ width: kondisiLebarTumb }}
-                                >
-                                    {dataku?.productImages.map((data, i) => {
-                                        return (
-                                            <SwiperSlide key={i}><Image src={data?.image} width={500} height={500} alt={data?.id}></Image></SwiperSlide>
-                                        )
-                                    })}
-
-                                </Swiper>
-                                {/* <div className={styles.tombolnextprev}>
-                                <div onClick={goPrev}><IoIosArrowBack className={styles.logo} /></div>
-                                <div onClick={goNext}><IoIosArrowForward className={styles.logo} /></div>
-                            </div> */}
-                            </div>
-
-                            {/* 
+                    <div className={styles.swipper}>
                         {dataku?.productImages?.map((data, i) => {
                             return (
                                 <div
@@ -135,9 +51,8 @@ export default function Product({ data }) {
                                 </div>
 
                             )
-                        })} */}
+                        })}
 
-                        </div>
                     </div>
 
                     <div className={styles.review}>
