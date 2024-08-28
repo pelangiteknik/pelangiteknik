@@ -23,7 +23,6 @@ export default async function Home() {
         Listdata={dataBest}
         Lfilter={false}
       />
-
       <Judul judul={'Categories'} />
       <Category data={data} />
 

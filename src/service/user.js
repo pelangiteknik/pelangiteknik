@@ -36,13 +36,11 @@ export const ListFilterProductsKategori = async (id) => {
     return data.data.filter((data) => data.name.toLowerCase().replace(/ /g, '-') == id)[0]
 }
 
-export const IdProduk = async (slug) => {
+export const Produk = async (slug) => {
     const resId = await fetch('https://api-ecom.tsuzumijapan.com/api/product.list')
     const dataId = await resId.json()
-    return dataId?.data?.filter((data) => data?.slug == slug)[0]?.id
-}
+    const id = dataId?.data?.filter((data) => data?.slug == slug)[0]?.id
 
-export const Produk = async (id) => {
     const resProduk = await fetch(`https://api-ecom.tsuzumijapan.com/api/product.find-by-id?id=${id}`)
     const dataProduk = await resProduk.json()
     return dataProduk

@@ -41,6 +41,7 @@ export default function Header() {
   }
 
   return (
+
     <header className={styles.header}>
       <div className={styles.atas}>
         <div className={styles.container}>
@@ -74,8 +75,13 @@ export default function Header() {
             <div className={styles.pencarianklik}>
               <Search />
             </div>}
-
         </div>
+        {
+          productMelayangHeader &&
+          <ProductHeaderMelayang
+            data={data}
+          />
+        }
       </div>
       <div className={styles.notifikasi} >
         <div className={styles.lebarnotif}>
@@ -85,15 +91,12 @@ export default function Header() {
           <div className={styles.klik}> <a href="">Help Center <IoIosArrowForward /></a>
           </div>
         </div>
-
-        {
-          productMelayangHeader &&
-          <ProductHeaderMelayang
-            data={data}
-          />
-        }
-
       </div>
+
+
+
     </header>
+
+
   )
 }
