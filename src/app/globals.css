@@ -56,28 +56,91 @@ td {
   border-collapse: collapse
 }
 
+
+
+/* SWIPPER */
 .swiper {
-  width: 100%;
-  height: 100%;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  height: 400px !important;
   /* Center slide text vertically */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.swiper-slide img {
+.mySwipper2 {
+  margin-bottom: 20px;
+  background-color: var(--color-grey);
+  border-radius: 7px;
+  position: relative;
+}
+
+.mySwipper2 .swiper-slide {
+  height: 400px;
+  width: 100%;
+}
+
+.mySwipper2 .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
+
+.mySwipper {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  width: 525px;
+}
+
+
+.mySwipper .swiper-slide {
+  width: 70px !important;
+  height: 59px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.mySwipper .swiper-slide:hover {
+  border: 3px solid var(--colorthrid);
+  transition: all ease 0.1s;
+}
+
+.mySwipper .swiper-slide img {
+  width: 71px;
+  height: 61px;
+  object-fit: contain;
+  border-radius: 7px;
+}
+
+/* .mySwipper .swiper-slide {} */
+
+.mySwipper .swiper-slide-thumb-active {
+  width: min-content !important;
+  border: 3px solid var(--colorthrid);
+}
+
+
+
+.swiper-pagination-fraction {
+  background-color: var(--colorthrid) !important;
+  color: var(--colorsekunder) !important;
+  bottom: 10px !important;
+  left: 20px !important;
+  width: fit-content !important;
+  height: fit-content !important;
+  position: absolute !important;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
 
 
 
@@ -86,9 +149,9 @@ td {
     font-size: 0.7rem;
   }
 
-  .swiper-slide {
-    height: 100% !important;
-  }
+  /* .swiper-slide {
+    height: 400px !important;
+  } */
 
   .swiper-slide img {
     display: flex;
@@ -107,10 +170,25 @@ td {
 
 
   .swiper-slide {
-    height: 150px !important;
+    height: 100% !important;
   }
 
   .swiper-slide img {
-    object-fit: cover;
+    object-fit: contain;
   }
+
+
+  .mySwipper2 {
+    border-radius: 0;
+
+  }
+
+  .mySwipper .swiper-slide {
+    border-radius: 0;
+  }
+
+  .mySwipper .swiper-slide img {
+    border-radius: 0;
+  }
+
 }
