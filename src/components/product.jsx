@@ -4,6 +4,7 @@ import convertToRupiah from '@/utils/ConvertRupiah'
 import Image from 'next/image';
 import ProductDetail from '@/components/productDetail';
 import ProductSpecs from '@/components/productSpecs';
+import ProductBeliMobile from "@/components/productBeliMobile";
 import { useRef, useState } from 'react';
 import { FaCaretUp } from "react-icons/fa"
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -110,33 +111,6 @@ export default function Product({ data }) {
                             </div> */}
                             </div>
 
-                            {/* 
-                        {dataku?.productImages?.map((data, i) => {
-                            return (
-                                <div
-                                    key={i}
-                                    style={data.order != '1' ? { display: 'none' } : { display: 'block' }}
-                                    className={styles.gambar}>
-                                    <Image
-                                        src={data.image}
-                                        alt={data.id}
-                                        width={400}
-                                        height={400}
-                                    />
-                                    <div className={styles.wm}>
-                                        <Image
-                                            src={`${process.env.NEXT_PUBLIC_URL}/wm.png`}
-                                            alt={'wm'}
-                                            width={400}
-                                            height={400}
-                                        >
-                                        </Image>
-                                    </div>
-                                </div>
-
-                            )
-                        })} */}
-
                         </div>
                     </div>
 
@@ -184,6 +158,9 @@ export default function Product({ data }) {
                         {pilihan == 'specs' && <ProductSpecs data={dataku?.features_by_category} />}
                     </div>
                 </div>
+
+                <ProductBeliMobile handleBeliSekarang={handleBeliSekarang} />
+
             </div>
         </div >
     )

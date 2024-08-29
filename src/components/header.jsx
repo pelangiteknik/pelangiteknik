@@ -41,7 +41,6 @@ export default function Header() {
   }
 
   return (
-
     <header className={styles.header}>
       <div className={styles.atas}>
         <div className={styles.container}>
@@ -92,9 +91,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-
-
-
     </header>
 
 

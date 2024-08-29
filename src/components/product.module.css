@@ -169,6 +169,20 @@
         display: none;
     }
 
+    .review {
+        font-size: 1rem;
+    }
+
+    .review .price {
+        display: none;
+    }
+
+    .review .buu {
+        display: none;
+    }
+
+
+
 }
 
 
