@@ -1,3 +1,4 @@
+'use client'
 import styles from "@/components/footer.module.css"
 import { TbHelpSquareFilled } from "react-icons/tb";
 import { FaPhone } from "react-icons/fa6";
@@ -5,15 +6,43 @@ import { BsBorderStyle } from "react-icons/bs";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
-import { FaHome } from "react-icons/fa";
 import { FaPhoneSquareAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaCalendar } from "react-icons/fa";
 import { IoHomeSharp } from "react-icons/io5";
+import { useEffect, useRef, useState } from "react";
+import { useStore } from "@/zustand/zustand";
 
 export default function Footer() {
+  const ref = useRef(null);
+  const setIsIntersecting = useStore((state) => state.setIsIntersecting)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsIntersecting(entry.isIntersecting);
+      },
+      {
+        root: null, // Menggunakan viewport sebagai root
+        rootMargin: "0px",
+        threshold: 0.1 // Elemen dianggap terlihat jika 10% dari ukurannya terlihat di viewport
+      }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={ref}>
       <footer>
         <div className={styles.atas}>
           <div className={styles.atasatas}>

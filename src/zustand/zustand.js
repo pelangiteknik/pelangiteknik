@@ -9,4 +9,7 @@ export const useStore = create((set) => ({
 
     productMelayangHeader: false,
     setProductMelayangHeader: () => set((state) => ({ productMelayangHeader: !state.productMelayangHeader })),
+
+    isIntersecting: false,
+    setIsIntersecting: (e) => set(() => ({ isIntersecting: e })),
 }))

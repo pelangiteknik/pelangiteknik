@@ -13,14 +13,15 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, FreeMode } from 'swiper/modules';
+import { useStore } from '@/zustand/zustand';
 
 export default function Product({ data }) {
     const dataku = data?.data
+    const isIntersecting = useStore((state) => state.isIntersecting)
 
     const handleBeliSekarang = () => {
         alert('otwww')
     }
-
 
     const [pilihan, setPilihan] = useState('detail')
 
@@ -158,12 +159,12 @@ export default function Product({ data }) {
                         {pilihan == 'specs' && <ProductSpecs data={dataku?.features_by_category} />}
                     </div>
                 </div>
-
-                <ProductBeliMobile
-                    handleBeliSekarang={handleBeliSekarang}
-                    price={convertToRupiah(dataku?.price)}
-                    stock={dataku?.stock}
-                />
+                {!isIntersecting &&
+                    <ProductBeliMobile
+                        handleBeliSekarang={handleBeliSekarang}
+                        price={convertToRupiah(dataku?.price)}
+                        stock={dataku?.stock}
+                    />}
 
             </div>
         </div >
