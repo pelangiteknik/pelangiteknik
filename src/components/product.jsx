@@ -159,7 +159,11 @@ export default function Product({ data }) {
                     </div>
                 </div>
 
-                <ProductBeliMobile handleBeliSekarang={handleBeliSekarang} />
+                <ProductBeliMobile
+                    handleBeliSekarang={handleBeliSekarang}
+                    price={convertToRupiah(dataku?.price)}
+                    stock={dataku?.stock}
+                />
 
             </div>
         </div >

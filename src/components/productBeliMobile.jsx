@@ -1,14 +1,14 @@
 import styles from '@/components/productBeliMobile.module.css'
 import { FaWhatsapp } from "react-icons/fa";
 
-export default function ProductBeliMobile({ handleBeliSekarang }) {
+export default function ProductBeliMobile({ handleBeliSekarang, price, stock }) {
     return (
         <div className={styles.container}>
             <div className={styles.atas}>
                 <div className={styles.harga}>
-                    Rp 75.000.000,00 / barang
+                    {price} / barang
                 </div>
-                <div className={styles.stock}>( 12 stock ) </div>
+                <div className={styles.stock}>( {stock} stock ) </div>
             </div>
             <div className={styles.bawah}>
                 <div className={styles.whatsapp}>
