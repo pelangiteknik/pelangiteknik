@@ -5,7 +5,7 @@ import Hpo from "@/components/hpo";
 import Judul from "@/components/judul";
 import HeaderFooter from "@/components/layout/headerFooter";
 import ListProduct from "@/components/listProduct";
-import UploadGambar from "@/components/UploadGambar";
+// import UploadGambar from "@/components/UploadGambar";
 import { ListProductsBest, FCategory } from "@/service/user";
 
 export const dynamic = 'force-dynamic'
@@ -21,7 +21,7 @@ export default async function Home() {
       <BannerMain data={data} />
       <Hpo />
       {/* <ContentWithWatermark /> */}
-      <UploadGambar />
+      {/* <UploadGambar /> */}
       <Judul judul={'Best Product'} />
       <ListProduct
         Listdata={dataBest}
