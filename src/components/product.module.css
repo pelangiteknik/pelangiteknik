@@ -61,6 +61,7 @@
     font-size: 0.8rem;
     width: 100%;
     border-radius: var(--border-radius);
+    margin-bottom: 20px;
 }
 
 .review button:hover {
@@ -68,6 +69,27 @@
     transition: all ease 0.2s;
     background-color: var(--hovercolormain);
 }
+
+.review .whatsapp {
+    background-color: var(--colorwa) !important;
+    color: var(--colorsekunder);
+    height: 60px;
+    font-weight: 500;
+    border: 0;
+    font-size: 0.8rem;
+    width: 100%;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.review .whatsapp:hover {
+    cursor: pointer;
+    transition: all ease 0.2s;
+    background-color: var(--hover-colorwa) !important;
+}
+
 
 .review .buu {
     width: 100%;

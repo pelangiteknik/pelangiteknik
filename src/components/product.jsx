@@ -1,5 +1,6 @@
 'use client'
 import styles from '@/components/product.module.css'
+import { FaWhatsapp } from "react-icons/fa";
 import convertToRupiah from '@/utils/ConvertRupiah'
 import Image from 'next/image';
 import ProductDetail from '@/components/productDetail';
@@ -14,13 +15,19 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, FreeMode } from 'swiper/modules';
 import { useStore } from '@/zustand/zustand';
+import { useRouter } from 'next/navigation';
 
 export default function Product({ data }) {
+    const router = useRouter()
     const dataku = data?.data
     const isIntersecting = useStore((state) => state.isIntersecting)
 
     const handleBeliSekarang = () => {
         alert('otwww')
+    }
+
+    const handleWhatsapp = () => {
+        router.push('https://wa.me/+628971041460?text=halooo%20selamat%20pagi%2C%20')
     }
 
     const [pilihan, setPilihan] = useState('detail')
@@ -130,6 +137,9 @@ export default function Product({ data }) {
                             <button onClick={handleBeliSekarang}>
                                 Beli Sekarang
                             </button>
+                            <button onClick={handleWhatsapp} className={styles.whatsapp}>
+                                <FaWhatsapp /> &nbsp; Whatsapp
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -162,6 +172,7 @@ export default function Product({ data }) {
                 {!isIntersecting &&
                     <ProductBeliMobile
                         handleBeliSekarang={handleBeliSekarang}
+                        handleWhatsapp={handleWhatsapp}
                         price={convertToRupiah(dataku?.price)}
                         stock={dataku?.stock}
                     />}

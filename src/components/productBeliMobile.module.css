@@ -23,7 +23,7 @@
 
 .whatsapp {
     width: 100%;
-    background-color: #137036;
+    background-color: var(--colorwa);
     color: var(--colorsekunder);
     text-align: center;
     height: 50px;
